@@ -1,0 +1,20 @@
+your-project-root/
+├── .env
+├── node_modules/
+├── package.json
+├── server.js               <-- Main Express app setup
+└── src/
+    ├── config/
+    │   └── database.js     <-- Database connection pool
+    ├── controllers/
+    │   └── surveyController.js <-- Logic for specific routes
+    ├── models/             <-- (Optional, for later if you use ORM/data access objects)
+    ├── routes/
+    │   └── surveyRoutes.js <-- Defines API endpoints and links to controllers
+    └── utils/              <-- (Optional, for helper functions)
+How a Request Flows Now:
+
+A request (e.g., POST /api/submit-survey) comes into server.js.
+app.use('/api', surveyRoutes); matches the /api prefix and passes the request to surveyRoutes.js.
+In surveyRoutes.js, router.post('/submit-survey', surveyController.submitSurvey); matches the /submit-survey part and calls the submitSurvey function from surveyController.js.
+surveyController.js executes the database logic and sends the response.
