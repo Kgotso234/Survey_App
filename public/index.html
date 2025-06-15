@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey App</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>_ Surveys</h2>
+      <nav>
+        <a href="#" id="fillSurveyLink" class="active">FILL OUT SURVEY</a>
+        <a href="#" id="viewResultsLink">VIEW SURVEY RESULTS</a>
+      </nav>
+    </header>
+
+    <!-- Fill Out Survey Screen -->
+    <section id="fillSurveySection" class="screen">
+      
+      <div class="personal-details">
+        <h3>Personal Details :</h3>
+        <div class="form-fields-group">
+            <div class="form-group">
+                <label>Full Names</label>
+                <input type="text" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" />
+            </div>
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" />
+            </div>
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="text" />
+            </div>
+        </div>
+      </div>
+        
+
+      <h4>What is your favorite food?</h4>
+      <div class="checkboxes">
+        <label><input type="checkbox" /> Pizza</label>
+        <label><input type="checkbox" /> Pasta</label>
+        <label><input type="checkbox" /> Pap and Wors</label>
+        <label><input type="checkbox" /> Other</label>
+      </div>
+
+      <p class="instruction">
+        Please rate your level of agreement on a scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree."
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>I like to watch movies</td>
+            <td><input type="radio" name="q1" /></td>
+            <td><input type="radio" name="q1" /></td>
+            <td><input type="radio" name="q1" /></td>
+            <td><input type="radio" name="q1" /></td>
+            <td><input type="radio" name="q1" /></td>
+          </tr>
+          <tr>
+            <td>I like to listen to radio</td>
+            <td><input type="radio" name="q2" /></td>
+            <td><input type="radio" name="q2" /></td>
+            <td><input type="radio" name="q2" /></td>
+            <td><input type="radio" name="q2" /></td>
+            <td><input type="radio" name="q2" /></td>
+          </tr>
+          <tr>
+            <td>I like to eat out</td>
+            <td><input type="radio" name="q3" /></td>
+            <td><input type="radio" name="q3" /></td>
+            <td><input type="radio" name="q3" /></td>
+            <td><input type="radio" name="q3" /></td>
+            <td><input type="radio" name="q3" /></td>
+          </tr>
+          <tr>
+            <td>I like to watch TV</td>
+            <td><input type="radio" name="q4" /></td>
+            <td><input type="radio" name="q4" /></td>
+            <td><input type="radio" name="q4" /></td>
+            <td><input type="radio" name="q4" /></td>
+            <td><input type="radio" name="q4" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="submit-btn">SUBMIT</button>
+    </section>
+
+    <!-- Survey Results Screen -->
+    <section id="resultsSection" class="screen hidden">
+      <h3>Survey Results</h3>
+      <p>Total number of surveys : <span>#surveys</span></p>
+      <p>Average Age : <span>#average age</span></p>
+      <p>Oldest person who participated in survey : <span>#max age</span></p>
+      <p>Youngest person who participated in survey : <span>#min age</span></p>
+
+      <p>Percentage of people who like Pizza : <span># % Pizza</span></p>
+      <p>Percentage of people who like Pasta : <span># % Pasta</span></p>
+      <p>Percentage of people who like Pap and Wors : <span># % Pap and Wors</span></p>
+
+      <p>People who like to watch movies : <span>#average of rating</span></p>
+      <p>People who like to listen to radio : <span>#average of rating</span></p>
+      <p>People who like to eat out : <span>#average of rating</span></p>
+      <p>People who like to watch TV : <span>#average of rating</span></p>
+    </section>
+  </div>
+
+  <script>
+    const fillLink = document.getElementById("fillSurveyLink");
+    const resultsLink = document.getElementById("viewResultsLink");
+    const fillSection = document.getElementById("fillSurveySection");
+    const resultsSection = document.getElementById("resultsSection");
+
+    fillLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      fillSection.classList.remove("hidden");
+      resultsSection.classList.add("hidden");
+      fillLink.classList.add("active");
+      resultsLink.classList.remove("active");
+    });
+
+    resultsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      fillSection.classList.add("hidden");
+      resultsSection.classList.remove("hidden");
+      resultsLink.classList.add("active");
+      fillLink.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

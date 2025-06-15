@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  margin-left: 20px;
+  color: #58a;
+  font-weight: bold;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+.screen {
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+h3, h4 {
+  margin-bottom: 10px;
+}
+
+
+.checkboxes {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.instruction {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.personal-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+.personal-details-row h3 {
+  margin: 0;
+  padding-top: 8px; 
+  white-space: nowrap;
+  
+}
+.form-fields-group {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  /* gap: 1px; */
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+table th:first-child,
+table td:first-child {
+  text-align: left;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
